@@ -1,0 +1,257 @@
+---
+import Icon from './Icon.astro';
+
+const pillars = [
+  { icon: 'shield', title: 'Protect', text: 'Cybersecurity for today and tomorrow' },
+  { icon: 'brain', title: 'Solve', text: 'Turn AI potential into real outcomes' },
+  { icon: 'gear', title: 'Build', text: 'Implement practical and secure solutions' },
+  { icon: 'chart', title: 'Scale', text: 'Grow with confidence and resilience' }
+];
+---
+
+<section class="home-hero">
+  <img
+    class="hero-art"
+    src="/images/home-hero.jpg"
+    alt=""
+    aria-hidden="true"
+    loading="eager"
+    fetchpriority="high"
+  />
+
+  <div class="hero-art-shade" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        PROTECT <span>|</span> SOLVE <span>|</span> BUILD <span>|</span> SCALE
+      </div>
+
+      <h1>
+        Practical AI.<br />
+        Stronger Security.<br />
+        <strong>Real Progress.</strong>
+      </h1>
+
+      <p>
+        Applied Dynamics delivers practical AI, cybersecurity, and cloud solutions
+        that help organizations solve real problems, build securely, and achieve
+        measurable results.
+      </p>
+
+      <div class="hero-actions">
+        <a href="/solutions" class="button button-primary">
+          Explore Our Solutions <span>→</span>
+        </a>
+
+        <a href="/contact" class="button button-outline-light">
+          Talk With Our Team
+        </a>
+      </div>
+    </div>
+
+    <div class="pillars">
+      {pillars.map(item => (
+        <article class="pillar">
+          <Icon name={item.icon} />
+          <div>
+            <strong>{item.title}</strong>
+            <span>{item.text}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-hero {
+    min-height: calc(100vh - 88px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(circle at 78% 38%, rgba(17, 103, 196, .14), transparent 34%),
+      linear-gradient(115deg, #020a13 0%, #061a2c 54%, #08213a 100%);
+    color: white;
+  }
+
+  .hero-art {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 66%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.03) brightness(.82);
+  }
+
+  .hero-art-shade {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        #020a13 0%,
+        #04111f 35%,
+        rgba(4, 17, 31, .94) 47%,
+        rgba(4, 17, 31, .55) 62%,
+        rgba(4, 17, 31, .14) 82%,
+        rgba(4, 17, 31, .06) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(4, 17, 31, .08),
+        rgba(4, 17, 31, .30)
+      );
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    padding-top: 64px;
+    padding-bottom: 52px;
+  }
+
+  .hero-copy {
+    max-width: 700px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    color: #55adff;
+  }
+
+  .hero-eyebrow span {
+    color: #73879a;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(3rem, 5.25vw, 5rem);
+    line-height: .99;
+    letter-spacing: -.055em;
+    font-weight: 700;
+  }
+
+  h1 strong {
+    font-weight: 700;
+    background: linear-gradient(90deg, #1687ff, #52b5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .hero-copy p {
+    max-width: 650px;
+    margin-top: 25px;
+    color: #c2cfdb;
+    font-size: 17px;
+    line-height: 1.68;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .pillars {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1050px;
+  }
+
+  .pillar {
+    min-height: 82px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 0 24px;
+    color: #1687ff;
+    border-right: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(4, 17, 31, .08);
+  }
+
+  .pillar:first-child {
+    padding-left: 0;
+  }
+
+  .pillar:last-child {
+    border-right: 0;
+  }
+
+  .pillar strong,
+  .pillar span {
+    display: block;
+  }
+
+  .pillar strong {
+    color: white;
+    font-size: 15px;
+  }
+
+  .pillar span {
+    margin-top: 5px;
+    color: #9fb0c0;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 1000px) {
+    .hero-art {
+      width: 80%;
+      opacity: .50;
+    }
+
+    .hero-art-shade {
+      background: rgba(4, 17, 31, .72);
+    }
+
+    .pillars {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+    }
+
+    .pillar:nth-child(2) {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .home-hero {
+      min-height: auto;
+    }
+
+    .hero-art {
+      width: 100%;
+      opacity: .32;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .pillars {
+      grid-template-columns: 1fr;
+    }
+
+    .pillar {
+      padding: 16px 0;
+      border-right: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }
+  }
+</style>

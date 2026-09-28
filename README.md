@@ -1,15 +1,28 @@
-# Wix Astro Blank Template
+# Applied Dynamics Astro UI Pack
 
-**[Live demo](https://h6s-1a31f9730cd85b-headlessstack.wix-site-host.com)**
+Copy the included `src/` folders into a fresh Wix Headless Astro scaffold.
 
-Our Astro templates are still in development and subject to change.
+Do not replace Wix-generated files such as `package.json`, `package-lock.json`, `astro.config.mjs`, `wix.config.json`, or `tsconfig.json`.
 
-To use a template, follow the [Wix CLI for Headless Quick Start](https://dev.wix.com/docs/go-headless/get-started/quick-starts/wix-managed-headless/quick-start-with-the-wix-cli), and select the desired template during the setup process.
+Routes included:
+- `/`
+- `/capabilities`
+- `/solutions`
+- `/industries`
+- `/insights`
+- `/about`
+- `/careers`
+- `/contact`
 
-## Need help?
+Optional images can be placed in `public/images/` using these names:
+- hero-capabilities.jpg
+- hero-solutions.jpg
+- hero-industries.jpg
+- hero-insights.jpg
+- hero-about.jpg
+- hero-careers.jpg
+- hero-contact.jpg
 
-For documentation and support, check out:
-
-- [Wix Headless Documentation](https://dev.wix.com/docs/go-headless)
-- [Wix SDK Documentation](https://dev.wix.com/docs/sdk)
-- [Community on Discord](https://discord.gg/n6TBrSnYTp)
+Notes:
+- Insights filters are visual-only in this starter.
+- Contact form is visual-only until wired to Wix Forms/CRM or another backend.

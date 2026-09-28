@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+const items=[['shield','Cybersecurity','Security engineering, architecture, incident response, information assurance, risk management, and resilient security programs.'],['brain','Artificial Intelligence','Practical AI and agentic workflows designed to automate work, unlock insights, and drive measurable business outcomes.'],['cloud','Cloud Engineering','Secure cloud architecture, modernization, DevSecOps, automation, and resilient infrastructure across leading platforms.']];
+---
+<Layout title="Capabilities | Applied Dynamics"><PageHero eyebrow="What We Do" title="Our Capabilities" description="Secure, scalable technology solutions designed to solve real problems." image="/images/hero-capabilities.jpg"/><section class="section"><div class="container list">{items.map(([icon,title,text])=><article class="card item"><div class="ic"><Icon name={icon}/></div><div><h2>{title}</h2><p>{text}</p><a href="/contact">Learn More →</a></div></article>)}</div></section></Layout>
+<style>.list{display:grid;gap:24px;max-width:900px}.item{display:grid;grid-template-columns:60px 1fr;gap:20px;padding:36px}.ic{color:#0878f9}h2{margin:0;font-size:23px}p{color:#5a6c80;line-height:1.7}a{color:#0878f9;text-decoration:none;font-weight:600;font-size:14px}</style>
