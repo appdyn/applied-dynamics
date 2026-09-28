@@ -10,17 +10,6 @@ const pillars = [
 ---
 
 <section class="home-hero">
-  <img
-    class="hero-art"
-    src="/images/home-hero.jpg"
-    alt=""
-    aria-hidden="true"
-    loading="eager"
-    fetchpriority="high"
-  />
-
-  <div class="hero-art-shade" aria-hidden="true"></div>
-
   <div class="container hero-content">
     <div class="hero-copy">
       <div class="hero-eyebrow">
@@ -71,49 +60,27 @@ const pillars = [
     overflow: hidden;
     display: flex;
     align-items: center;
-    background:
-      radial-gradient(circle at 78% 38%, rgba(17, 103, 196, .14), transparent 34%),
-      linear-gradient(115deg, #020a13 0%, #061a2c 54%, #08213a 100%);
     color: white;
-  }
-
-  .hero-art {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    width: 66%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: saturate(1.03) brightness(.82);
-  }
-
-  .hero-art-shade {
-    position: absolute;
-    z-index: 2;
-    inset: 0;
-    background:
+    background-color: #04111f;
+    background-image:
       linear-gradient(
         90deg,
-        #020a13 0%,
-        #04111f 35%,
-        rgba(4, 17, 31, .94) 47%,
-        rgba(4, 17, 31, .55) 62%,
-        rgba(4, 17, 31, .14) 82%,
-        rgba(4, 17, 31, .06) 100%
+        rgba(2, 10, 19, 0.98) 0%,
+        rgba(3, 13, 24, 0.96) 27%,
+        rgba(4, 17, 31, 0.88) 40%,
+        rgba(4, 17, 31, 0.52) 57%,
+        rgba(4, 17, 31, 0.14) 75%,
+        rgba(4, 17, 31, 0.04) 100%
       ),
-      linear-gradient(
-        180deg,
-        rgba(4, 17, 31, .08),
-        rgba(4, 17, 31, .30)
-      );
-    pointer-events: none;
+      url('/images/home-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
   }
 
   .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 2;
     padding-top: 64px;
     padding-bottom: 52px;
   }
@@ -182,7 +149,6 @@ const pillars = [
     padding: 0 24px;
     color: #1687ff;
     border-right: 1px solid rgba(255, 255, 255, .14);
-    background: rgba(4, 17, 31, .08);
   }
 
   .pillar:first-child {
@@ -210,14 +176,14 @@ const pillars = [
     line-height: 1.45;
   }
 
-  @media (max-width: 1000px) {
-    .hero-art {
-      width: 80%;
-      opacity: .50;
+  @media (max-width: 900px) {
+    .home-hero {
+      min-height: auto;
+      background-position: center, 62% center;
     }
 
-    .hero-art-shade {
-      background: rgba(4, 17, 31, .72);
+    .hero-actions {
+      flex-wrap: wrap;
     }
 
     .pillars {
@@ -232,12 +198,7 @@ const pillars = [
 
   @media (max-width: 600px) {
     .home-hero {
-      min-height: auto;
-    }
-
-    .hero-art {
-      width: 100%;
-      opacity: .32;
+      background-position: center, 70% center;
     }
 
     .hero-actions {

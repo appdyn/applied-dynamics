@@ -2,7 +2,158 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Icon from '../components/Icon.astro';
-const items=[['shield','Cybersecurity','Security engineering, architecture, incident response, information assurance, risk management, and resilient security programs.'],['brain','Artificial Intelligence','Practical AI and agentic workflows designed to automate work, unlock insights, and drive measurable business outcomes.'],['cloud','Cloud Engineering','Secure cloud architecture, modernization, DevSecOps, automation, and resilient infrastructure across leading platforms.']];
+
+const capabilities = [
+  {
+    icon: 'shield',
+    title: 'Cybersecurity',
+    text: 'Security engineering, architecture, incident response, information assurance, risk management, and resilient security programs.'
+  },
+  {
+    icon: 'brain',
+    title: 'Artificial Intelligence',
+    text: 'Practical AI and agentic workflows designed to automate work, unlock insights, and drive measurable business outcomes.'
+  },
+  {
+    icon: 'cloud',
+    title: 'Cloud Engineering',
+    text: 'Secure cloud architecture, modernization, DevSecOps, automation, and resilient infrastructure across leading platforms.'
+  }
+];
 ---
-<Layout title="Capabilities | Applied Dynamics"><PageHero eyebrow="What We Do" title="Our Capabilities" description="Secure, scalable technology solutions designed to solve real problems." image="/images/hero-capabilities.jpg"/><section class="section"><div class="container list">{items.map(([icon,title,text])=><article class="card item"><div class="ic"><Icon name={icon}/></div><div><h2>{title}</h2><p>{text}</p><a href="/contact">Learn More →</a></div></article>)}</div></section></Layout>
-<style>.list{display:grid;gap:24px;max-width:900px}.item{display:grid;grid-template-columns:60px 1fr;gap:20px;padding:36px}.ic{color:#0878f9}h2{margin:0;font-size:23px}p{color:#5a6c80;line-height:1.7}a{color:#0878f9;text-decoration:none;font-weight:600;font-size:14px}</style>
+
+<Layout
+  title="Capabilities | Applied Dynamics"
+  description="Explore Applied Dynamics capabilities in cybersecurity, artificial intelligence, and cloud engineering."
+>
+  <PageHero
+    eyebrow="What We Do"
+    title="Our Capabilities"
+    description="Secure, scalable technology solutions designed to solve real problems."
+    image="/images/capabilities-hero.jpg"
+  />
+
+  <section class="section capabilities-section">
+    <div class="container capability-list">
+      {capabilities.map(item => (
+        <article class="capability-card">
+          <div class="capability-icon">
+            <Icon name={item.icon} />
+          </div>
+
+          <div class="capability-content">
+            <h2>{item.title}</h2>
+            <p>{item.text}</p>
+            <a href="/contact">Learn More <span>→</span></a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .capabilities-section {
+    background: #fff;
+  }
+
+  .capability-list {
+    display: grid;
+    gap: 22px;
+    max-width: 1040px;
+  }
+
+  .capability-card {
+    position: relative;
+    min-height: 190px;
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    padding: 34px 38px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e3eaf1;
+    border-radius: 14px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+
+  .capability-card:hover {
+    transform: translateY(-4px);
+    border-color: #c6d9eb;
+    box-shadow: 0 18px 50px rgba(7, 24, 45, .08);
+  }
+
+  .capability-card::after {
+    content: '';
+    position: absolute;
+    right: -100px;
+    top: -120px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(22, 135, 255, .08), transparent 68%);
+    pointer-events: none;
+  }
+
+  .capability-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+    background: #eaf4ff;
+    color: #0878f9;
+  }
+
+  .capability-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+  }
+
+  .capability-content h2 {
+    margin: 0;
+    color: #07182d;
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+  }
+
+  .capability-content p {
+    margin: 12px 0 0;
+    color: #52677d;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .capability-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 18px;
+    color: #0878f9;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .capability-content a span {
+    transition: transform .18s ease;
+  }
+
+  .capability-content a:hover span {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 520px) {
+    .capability-card {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 18px;
+      padding: 26px 22px;
+    }
+  }
+</style>
