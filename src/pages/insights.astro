@@ -1,7 +1,120 @@
 ---
 import AppliedLayout from "../layouts/AppliedLayout.astro";
 import ApprovedHero from "../components/ApprovedHero.astro";
-import ServiceCard from "../components/ServiceCard.astro";
 ---
-<AppliedLayout title="/insights" page="insights"><ApprovedHero page="insights" title="Insights" description="Practical research, benchmarks, use cases, and guides from our engineering work." width={498} height={86}/><section class="content"><div class="filters" role="group" aria-label="Filter insights"><button type="button" data-filter="All" aria-pressed="true">All</button><button type="button" data-filter="Research" aria-pressed="false">Research</button><button type="button" data-filter="Benchmarks" aria-pressed="false">Benchmarks</button><button type="button" data-filter="Use Cases" aria-pressed="false">Use Cases</button><button type="button" data-filter="Guides" aria-pressed="false">Guides</button><button type="button" data-filter="Field Notes" aria-pressed="false">Field Notes</button></div><div class="grid three"><article class="card insight" data-category="Use Cases"><img src="/images/document-ai.webp" alt="" loading="lazy"/><div class="card-body"><span class="eyebrow">USE CASE</span><h2>Automating Document Processing with AI</h2><p>How we built a secure document processing workflow for a mid-size business.</p><p class="date">Sep 18, 2025</p><button class="learn unavailable" type="button" disabled aria-label="Read article">→</button></div></article><article class="card insight" data-category="Benchmarks"><img src="/images/llm.webp" alt="" loading="lazy"/><div class="card-body"><span class="eyebrow">BENCHMARK</span><h2>Local LLM Performance on RTX 5080</h2><p>Comparing model performance, memory usage, and cost for SMB deployments.</p><p class="date">Sep 12, 2025</p><button class="learn unavailable" type="button" disabled aria-label="Read article">→</button></div></article><article class="card insight" data-category="Research"><img src="/images/agentic.webp" alt="" loading="lazy"/><div class="card-body"><span class="eyebrow">RESEARCH</span><h2>Securing Agentic AI Workflows</h2><p>Architecture patterns and security considerations.</p><p class="date">Sep 5, 2025</p><button class="learn unavailable" type="button" disabled aria-label="Read article">→</button></div></article><article class="card insight" data-category="Guides"><img src="/images/readiness.webp" alt="" loading="lazy"/><div class="card-body"><span class="eyebrow">GUIDE</span><h2>AI Readiness Checklist for SMBs</h2><p>Key steps to prepare your organization for AI deployment.</p><p class="date">Aug 28, 2025</p><button class="learn unavailable" type="button" disabled aria-label="Read article">→</button></div></article><article class="card insight" data-category="Field Notes"><img src="/images/rag.webp" alt="" loading="lazy"/><div class="card-body"><span class="eyebrow">FIELD NOTE</span><h2>Lessons from Deploying RAG in a Regulated Environment</h2><p>Real-world insights, challenges, and what we learned.</p><p class="date">Aug 20, 2025</p><button class="learn unavailable" type="button" disabled aria-label="Read article">→</button></div></article><article class="card insight" data-category="Use Cases"><img src="/images/knowledge.webp" alt="" loading="lazy"/><div class="card-body"><span class="eyebrow">USE CASE</span><h2>Internal Knowledge Assistant for Operations</h2><p>How an AI assistant improved team productivity and reduced response time.</p><p class="date">Aug 15, 2025</p><button class="learn unavailable" type="button" disabled aria-label="Read article">→</button></div></article></div></section>
-<script>document.querySelectorAll<HTMLButtonElement>("[data-filter]").forEach(button => button.addEventListener("click", () => { document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b === button))); document.querySelectorAll<HTMLElement>("[data-category]").forEach(card => { card.hidden = button.dataset.filter !== "All" && card.dataset.category !== button.dataset.filter; }); }));</script></AppliedLayout>
+
+<AppliedLayout title="/insights" page="insights">
+  <ApprovedHero
+    page="insights"
+    title="Insights"
+    description="Practical research, benchmarks, use cases, and guides from our engineering work."
+    width={498}
+    height={86}
+  />
+
+  <section class="content">
+    <!--
+      Insight filters and cards are temporarily disabled.
+      Add future Insights content here when ready.
+
+      <div class="filters" role="group" aria-label="Filter insights">
+        <button type="button" data-filter="All" aria-pressed="true">All</button>
+        <button type="button" data-filter="Research" aria-pressed="false">Research</button>
+        <button type="button" data-filter="Benchmarks" aria-pressed="false">Benchmarks</button>
+        <button type="button" data-filter="Use Cases" aria-pressed="false">Use Cases</button>
+        <button type="button" data-filter="Guides" aria-pressed="false">Guides</button>
+        <button type="button" data-filter="Field Notes" aria-pressed="false">Field Notes</button>
+      </div>
+
+      <div class="grid three">
+        <article class="card insight" data-category="Use Cases">
+          <img src="/images/document-ai.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <span class="eyebrow">USE CASE</span>
+            <h2>Automating Document Processing with AI</h2>
+            <p>How we built a secure document processing workflow for a mid-size business.</p>
+            <p class="date">Sep 18, 2025</p>
+            <button class="learn unavailable" type="button" disabled aria-label="Read article">→</button>
+          </div>
+        </article>
+
+        <article class="card insight" data-category="Benchmarks">
+          <img src="/images/llm.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <span class="eyebrow">BENCHMARK</span>
+            <h2>Local LLM Performance on RTX 5080</h2>
+            <p>Comparing model performance, memory usage, and cost for SMB deployments.</p>
+            <p class="date">Sep 12, 2025</p>
+            <button class="learn unavailable" type="button" disabled aria-label="Read article">→</button>
+          </div>
+        </article>
+
+        <article class="card insight" data-category="Research">
+          <img src="/images/agentic.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <span class="eyebrow">RESEARCH</span>
+            <h2>Securing Agentic AI Workflows</h2>
+            <p>Architecture patterns and security considerations.</p>
+            <p class="date">Sep 5, 2025</p>
+            <button class="learn unavailable" type="button" disabled aria-label="Read article">→</button>
+          </div>
+        </article>
+
+        <article class="card insight" data-category="Guides">
+          <img src="/images/readiness.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <span class="eyebrow">GUIDE</span>
+            <h2>AI Readiness Checklist for SMBs</h2>
+            <p>Key steps to prepare your organization for AI deployment.</p>
+            <p class="date">Aug 28, 2025</p>
+            <button class="learn unavailable" type="button" disabled aria-label="Read article">→</button>
+          </div>
+        </article>
+
+        <article class="card insight" data-category="Field Notes">
+          <img src="/images/rag.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <span class="eyebrow">FIELD NOTE</span>
+            <h2>Lessons from Deploying RAG in a Regulated Environment</h2>
+            <p>Real-world insights, challenges, and what we learned.</p>
+            <p class="date">Aug 20, 2025</p>
+            <button class="learn unavailable" type="button" disabled aria-label="Read article">→</button>
+          </div>
+        </article>
+
+        <article class="card insight" data-category="Use Cases">
+          <img src="/images/knowledge.webp" alt="" loading="lazy" />
+          <div class="card-body">
+            <span class="eyebrow">USE CASE</span>
+            <h2>Internal Knowledge Assistant for Operations</h2>
+            <p>How an AI assistant improved team productivity and reduced response time.</p>
+            <p class="date">Aug 15, 2025</p>
+            <button class="learn unavailable" type="button" disabled aria-label="Read article">→</button>
+          </div>
+        </article>
+      </div>
+
+      <script>
+        document
+          .querySelectorAll<HTMLButtonElement>("[data-filter]")
+          .forEach((button) =>
+            button.addEventListener("click", () => {
+              document
+                .querySelectorAll("[data-filter]")
+                .forEach((b) =>
+                  b.setAttribute("aria-pressed", String(b === button))
+                );
+
+              document
+                .querySelectorAll<HTMLElement>("[data-category]")
+                .forEach((card) => {
+                  card.hidden =
+                    button.dataset.filter !== "All" &&
+                    card.dataset.category !== button.dataset.filter;
+                });
+            })
+          );
+      </script>
+    -->
+  </section>
+</AppliedLayout>

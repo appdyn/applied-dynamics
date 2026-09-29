@@ -3,4 +3,41 @@ import AppliedLayout from "../layouts/AppliedLayout.astro";
 import ApprovedHero from "../components/ApprovedHero.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 ---
-<AppliedLayout title="/careers" page="careers"><ApprovedHero page="careers" title="Build What Matters." description="Join a team of engineers, problem solvers, and innovators who are applying technology to real-world challenges." width={337} height={113}/><section class="content"><h2>Why Work at Applied Dynamics</h2><div class="grid four values"><ServiceCard showLearn={false} title="Meaningful Work" text="Solve real problems for mission-driven organizations." icon="gear" /><ServiceCard showLearn={false} title="Growth" text="Expand your skills and work with emerging technologies." icon="growth" /><ServiceCard showLearn={false} title="Flexible" text="Collaborative and flexible work environment." icon="cloud" /><ServiceCard showLearn={false} title="Impact" text="Make a difference in national security, public service, and business innovation." icon="bulb" /></div><h2>Open Positions</h2><ul class="jobs"><li><strong>AI/ML Engineer</strong><span>Engineering　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li><li><strong>Cybersecurity Analyst</strong><span>Security　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li><li><strong>Cloud Solutions Architect</strong><span>Engineering　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li><li><strong>Technical Project Manager</strong><span>Operations　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li></ul></section></AppliedLayout>
+
+<AppliedLayout title="/careers" page="careers"
+  ><ApprovedHero
+    page="careers"
+    title="Build What Matters."
+    description="Join a team of engineers, problem solvers, and innovators who are applying technology to real-world challenges."
+    width={337}
+    height={113}
+  /><section class="content">
+    <h2>Why Work at Applied Dynamics</h2><div class="grid four values">
+      <ServiceCard
+        showLearn={false}
+        title="Meaningful Work"
+        text="Solve real problems for mission-driven organizations."
+        icon="gear"
+      /><ServiceCard
+        showLearn={false}
+        title="Growth"
+        text="Expand your skills and work with emerging technologies."
+        icon="growth"
+      /><ServiceCard
+        showLearn={false}
+        title="Flexible"
+        text="Collaborative and flexible work environment."
+        icon="cloud"
+      /><ServiceCard
+        showLearn={false}
+        title="Impact"
+        text="Make a difference in national security, public service, and business innovation."
+        icon="bulb"
+      />
+    </div><h2>Open Positions</h2><p>
+      There is no open position at the moment.
+    </p><!--
+<ul class="jobs"><li><strong>AI/ML Engineer</strong><span>Engineering　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li><li><strong>Cybersecurity Analyst</strong><span>Security　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li><li><strong>Cloud Solutions Architect</strong><span>Engineering　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li><li><strong>Technical Project Manager</strong><span>Operations　|　Remote / Hybrid</span><button class="job-details" type="button" disabled>View Details →</button></li></ul>
+-->
+  </section></AppliedLayout
+>

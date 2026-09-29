@@ -3,5 +3,72 @@ import AppliedLayout from "../layouts/AppliedLayout.astro";
 import ApprovedHero from "../components/ApprovedHero.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 ---
-<AppliedLayout title="/contact" page="contact"><ApprovedHero page="contact" title="Let\u2019s Build What\u2019s Next." description="Have a question or want to discuss a project? We\u2019d love to hear from you." width={313} height={124}/><section class="content contact-grid"><section class="card"><div class="card-body"><h2>Send Us a Message</h2><form><label>Name <span aria-hidden="true">*</span><input name="name" autocomplete="name" placeholder="Your name" required/></label><label>Email <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" placeholder="you@company.com" required/></label><label>Company<input name="company" autocomplete="organization" placeholder="Your company"/></label><label>How can we help? <span aria-hidden="true">*</span><textarea name="message" placeholder="Tell us about your needs..." required></textarea></label><button class="button" type="submit">Send Message →</button><p class="form-status" role="status"></p></form></div></section><section class="card"><div class="card-body"><h2>Contact Information</h2><p><a href="mailto:info@applied-dynamics.com">info@applied-dynamics.com</a></p><p>+1 (703) 555-0123</p><p>Fairfax, VA<br/>Serving clients nationwide</p><hr/><h2>Let’s Talk</h2><p>Whether you’re exploring AI solutions, need cybersecurity support, or want to discuss a specific project, our team is ready to help.</p></div></section></section>
-<script>document.querySelector('form')?.addEventListener('submit', (event) => { event.preventDefault(); const status = document.querySelector('.form-status'); if (status) status.textContent = 'Message not sent. Please contact info@applied-dynamics.com.'; });</script></AppliedLayout>
+
+<AppliedLayout title="/contact" page="contact"
+  ><ApprovedHero
+    page="contact"
+    title="Let\u2019s Build What\u2019s Next."
+    description="Have a question or want to discuss a project? We\u2019d love to hear from you."
+    width={313}
+    height={124}
+  /><section class="content contact-grid">
+    <section class="card">
+      <div class="card-body">
+        <h2>Send Us a Message</h2><form>
+          <label
+            >Name <span aria-hidden="true">*</span><input
+              name="name"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+            /></label
+          ><label
+            >Email <span aria-hidden="true">*</span><input
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@company.com"
+              required
+            /></label
+          ><label
+            >Company<input
+              name="company"
+              autocomplete="organization"
+              placeholder="Your company"
+            /></label
+          ><label
+            >How can we help? <span aria-hidden="true">*</span><textarea
+              name="message"
+              placeholder="Tell us about your needs..."
+              required></textarea></label
+          ><button class="button" type="submit">Send Message →</button><p
+            class="form-status"
+            role="status"
+          >
+          </p>
+        </form>
+      </div>
+    </section><section class="card">
+      <div class="card-body">
+        <h2>Contact Information</h2><p>
+          <a href="mailto:info@appliedynamics.com"
+            >info@appliedynamics.com</a>
+        </p><p>+1 (703) 344-6994</p><p>
+          Fairfax, VA<br />Serving clients nationwide
+        </p><hr /><h2>Let’s Talk</h2><p>
+          Whether you’re exploring AI solutions, need cybersecurity support, or
+          want to discuss a specific project, our team is ready to help.
+        </p>
+      </div>
+    </section>
+  </section>
+  <script>
+    document.querySelector("form")?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const status = document.querySelector(".form-status");
+      if (status)
+        status.textContent =
+          "Message not sent. Please contact info@applied-dynamics.com.";
+    });
+  </script></AppliedLayout
+>
