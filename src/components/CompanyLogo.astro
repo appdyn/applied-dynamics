@@ -1,0 +1,34 @@
+---
+const { href = '/' } = Astro.props;
+---
+
+<a class="company-logo" href={href} aria-label="Applied Dynamics home">
+  <img
+    src="/images/applied-dynamics-logo-cyan.webp"
+    width="2172"
+    height="724"
+    alt="Applied Dynamics"
+  />
+</a>
+
+<style>
+  a.company-logo {
+    display: block;
+    flex: 0 0 240px;
+    width: 240px;
+  }
+
+  a.company-logo > img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+
+  @media (max-width: 980px) {
+    a.company-logo {
+      flex-basis: 180px;
+      width: 180px;
+    }
+  }
+</style>

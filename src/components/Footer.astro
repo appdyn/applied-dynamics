@@ -1,5 +1,59 @@
 ---
-import Logo from './Logo.astro';
+import Logo from "./Logo.astro";
 ---
-<footer class="footer"><div class="container grid"><div><Logo dark/><p>Practical AI. Stronger Security.<br/>Real Progress.</p></div><div><strong>Explore</strong><a href="/capabilities">Capabilities</a><a href="/solutions">Solutions</a><a href="/industries">Industries</a><a href="/insights">Insights</a></div><div><strong>Company</strong><a href="/about">About</a><a href="/careers">Careers</a><a href="/contact">Contact</a></div></div><div class="container bottom">© {new Date().getFullYear()} Applied Dynamics</div></footer>
-<style>.footer{padding:64px 0 28px;background:#07182d;color:#fff}.grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px}.grid>div:not(:first-child){display:flex;flex-direction:column;gap:13px}.footer a{color:#9eafc1;text-decoration:none;font-size:14px}.footer p{color:#8fa2b8;line-height:1.7}.bottom{margin-top:54px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);color:#74889d;font-size:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style>
+
+<footer class="footer">
+  <div class="container grid">
+    <div>
+      <Logo dark /><p>Practical AI. Stronger Security.<br />Real Progress.</p>
+    </div><div>
+      <strong>Explore</strong><a href="/capabilities">Capabilities</a><a
+        href="/solutions">Solutions</a
+      ><a href="/industries">Industries</a><a href="/insights">Insights</a>
+    </div><div>
+      <strong>Company</strong><a href="/about">About</a><a href="/careers"
+        >Careers</a
+      ><a href="/contact">Contact</a>
+    </div>
+  </div><div class="container bottom">
+    © {new Date().getFullYear()} Applied Dynamics
+  </div>
+</footer>
+<style>
+  .footer {
+    padding: 64px 0 28px;
+    background: #07182d;
+    color: #fff;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+  }
+  .grid > div:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+  .footer a {
+    color: #9eafc1;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .footer p {
+    color: #8fa2b8;
+    line-height: 1.7;
+  }
+  .bottom {
+    margin-top: 54px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #74889d;
+    font-size: 12px;
+  }
+  @media (max-width: 700px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,352 @@
+/* Imported by ApprovedHero.astro. */
+
+/* =========================================================
+   HERO SHELL
+========================================================= */
+
+.sharp-hero-shell {
+  width: min(calc(100% - 64px), 1200px);
+  margin-inline: auto;
+}
+
+/* =========================================================
+   BASE INTERNAL HERO
+========================================================= */
+
+.sharp-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 280px;
+
+  background: #03182e;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   HERO ARTWORK
+========================================================= */
+
+.sharp-hero__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: block;
+}
+
+.sharp-hero__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.sharp-hero__content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 44px 32px;
+  margin: 0;
+}
+
+.sharp-hero h1 {
+  max-width: 720px;
+  margin: 0 0 18px;
+
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: clamp(34px, 3.6vw, 52px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -1.2px;
+}
+
+.sharp-hero__description {
+  max-width: 620px;
+  margin: 0;
+
+  color: #fff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   HOME HERO
+========================================================= */
+
+.sharp-hero--home {
+  min-height: clamp(720px, 72vh, 820px);
+  padding-bottom: 45px;
+}
+
+.sharp-hero--home .sharp-hero__content {
+  padding-top: 86px;
+  padding-bottom: 62px;
+}
+
+.sharp-hero--home h1 {
+  max-width: 680px;
+  font-size: clamp(44px, 4.6vw, 64px);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -1.5px;
+}
+
+.sharp-hero--home h1 span {
+  color: #0095ff;
+}
+
+/* =========================================================
+   HOME EYEBROW
+========================================================= */
+
+.sharp-hero__eyebrow {
+  margin-bottom: 26px;
+  color: #18b4ff;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.sharp-hero__eyebrow span {
+  color: #8799ab;
+  margin: 0 14px;
+}
+
+/* =========================================================
+   HOME ACTIONS
+========================================================= */
+
+.sharp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.sharp-hero__actions .button {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-weight: 500;
+}
+
+.sharp-hero__secondary {
+  background: transparent;
+  border: 1px solid #d1d8e3;
+}
+
+/* =========================================================
+   HOME FEATURE ROW
+========================================================= */
+
+.sharp-hero__features {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 32px;
+  gap: 0;
+}
+
+.sharp-hero__features li {
+  padding: 0 25px;
+  text-align: center;
+  border-right: 1px solid #6b7d8d;
+}
+
+.sharp-hero__features li:last-child {
+  border-right: 0;
+}
+
+.sharp-hero__features img {
+  margin-bottom: 10px;
+}
+
+.sharp-hero__features h2 {
+  margin: 0 0 8px;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.sharp-hero__features p {
+  max-width: 200px;
+  margin: auto;
+  color: #fff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.sharp-hero--about {
+  color: #07143e;
+  background: #eaf1f7;
+}
+
+.sharp-hero--about .sharp-hero__description {
+  color: #21395f;
+}
+
+.sharp-hero--about .sharp-hero__content {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 250, 255, 0.85),
+    rgba(247, 250, 255, 0) 70%
+  );
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .sharp-hero-shell {
+    width: calc(100% - 48px);
+  }
+
+  .sharp-hero {
+    min-height: 270px;
+  }
+
+  .sharp-hero__content {
+    padding: 40px 28px;
+  }
+
+  .sharp-hero--home {
+    min-height: 640px;
+  }
+
+  .sharp-hero__features {
+    padding-inline: 28px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .sharp-hero-shell {
+    width: calc(100% - 32px);
+    margin-inline: auto;
+  }
+
+  .sharp-hero {
+    width: 100%;
+    min-height: 240px;
+    justify-content: flex-end;
+  }
+
+  .sharp-hero__content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 32px 22px;
+    background: linear-gradient(
+      90deg,
+      rgba(1, 15, 32, 0.88),
+      rgba(1, 15, 32, 0.5)
+    );
+  }
+
+  .sharp-hero h1 {
+    max-width: 100%;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+  }
+
+  .sharp-hero__description {
+    max-width: 100%;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .sharp-hero__art img {
+    object-position: 72% center;
+  }
+
+  .sharp-hero--home {
+    min-height: auto;
+    padding-bottom: 26px;
+  }
+
+  .sharp-hero--home .sharp-hero__content {
+    padding: 42px 22px 34px;
+  }
+
+  .sharp-hero--home h1 {
+    font-size: 39px;
+    font-weight: 600;
+  }
+
+  .sharp-hero__eyebrow {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .sharp-hero__eyebrow span {
+    margin: 0 6px;
+  }
+
+  .sharp-hero__actions {
+    gap: 12px;
+  }
+
+  .sharp-hero__actions .button {
+    padding: 13px 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .sharp-hero__features {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+    padding: 16px 18px 0;
+    background: rgba(1, 15, 32, 0.78);
+  }
+
+  .sharp-hero__features li {
+    padding: 0 12px;
+  }
+
+  .sharp-hero__features li:nth-child(2) {
+    border-right: 0;
+  }
+
+  .sharp-hero__features p {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .sharp-hero--about .sharp-hero__content {
+    background: rgba(243, 248, 255, 0.9);
+  }
+}

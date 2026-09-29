@@ -1,8 +1,102 @@
 ---
-const { page, title, description, width, height } = Astro.props;
+import "../styles/sharp-images.css";
+
+const { page, title, description } = Astro.props;
+
+const asset = ["home", "capabilities", "insights"].includes(page)
+  ? "wave"
+  : page;
+
+const home = page === "home";
+
+const features = [
+  ["shield", "Protect", "Cybersecurity for today and tomorrow"],
+  ["brain", "Solve", "Turn AI potential into real outcomes"],
+  ["gear", "Build", "Implement practical and secure solutions"],
+  ["growth", "Scale", "Grow with confidence and resilience"],
+];
 ---
-<section class:list={['approved-hero', { 'home-hero': page === 'home' }]} aria-labelledby="page-title">
-<h1 id="page-title" class="sr-only">{title}</h1><p class="sr-only">{description}</p>
-<picture><source media="(max-width: 700px)" srcset={`/images/${page}-hero-mobile.webp`}/><img src={`/images/${page}-hero-desktop.webp`} width={width} height={height} alt="" fetchpriority="high" loading="eager"/></picture>
-{page === 'home' && <><a class="hotspot home-solutions" href="/solutions" aria-label="Explore Our Solutions"></a><a class="hotspot home-contact" href="/contact" aria-label="Talk With Our Team"></a><ul class="sr-only"><li>Protect: Cybersecurity for today and tomorrow</li><li>Solve: Turn AI potential into real outcomes</li><li>Build: Implement practical and secure solutions</li><li>Scale: Grow with confidence and resilience</li></ul></>}
-</section>
+
+<div class="sharp-hero-shell">
+  <section
+    class:list={["sharp-hero", `sharp-hero--${page}`]}
+    aria-labelledby="page-title"
+  >
+    <picture class="sharp-hero__art">
+      <source
+        media="(max-width: 700px)"
+        srcset={`/images/${asset}-sharp-mobile.webp 1080w`}
+        sizes="calc(100vw - 32px)"
+      />
+
+      <img
+        src={`/images/${asset}-sharp-desktop.webp`}
+        alt=""
+        width={asset === "wave" ? 1619 : 1920}
+        height={asset === "wave" ? 971 : 768}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
+
+    <div class="sharp-hero__content">
+      {
+        home && (
+          <p class="sharp-hero__eyebrow">
+            PROTECT <span>|</span> SOLVE <span>|</span> BUILD <span>|</span> SCALE
+          </p>
+        )
+      }
+
+      <h1 id="page-title">
+        {
+          home ? (
+            <>
+              Practical AI.
+              <br />
+              Stronger Security.
+              <br />
+              <span>Real Progress.</span>
+            </>
+          ) : (
+            title
+          )
+        }
+      </h1>
+
+      <p class="sharp-hero__description">{description}</p>
+
+      {
+        home && (
+          <div class="sharp-hero__actions">
+            <a class="button" href="/solutions">
+              Explore Our Solutions <span aria-hidden="true">→</span>
+            </a>
+            <a class="button sharp-hero__secondary" href="/contact">
+              Talk With Our Team
+            </a>
+          </div>
+        )
+      }
+    </div>
+
+    {
+      home && (
+        <ul class="sharp-hero__features">
+          {features.map(([icon, label, text]) => (
+            <li>
+              <img
+                src={`/images/icon-${icon}.svg`}
+                width="40"
+                height="40"
+                alt=""
+              />
+              <h2>{label}</h2>
+              <p>{text}</p>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</div>
