@@ -47,7 +47,7 @@ const insights = [
     eyebrow="Engineering Knowledge"
     title="Insights"
     description="Practical research, benchmarks, use cases, guides, and lessons from our engineering work."
-    image="/images/insights-hero.jpg"
+    image="/images/insights-hero.png"
   />
 
   <section class="section">
@@ -65,7 +65,7 @@ const insights = [
         {insights.map(item => (
           <article class="insight-card card" data-type={item.type}>
             <div class="insight-placeholder" aria-hidden="true">
-              <span>Insight</span>
+              <span>INSIGHT</span>
             </div>
 
             <div class="insight-content">
@@ -86,10 +86,10 @@ const insights = [
 </Layout>
 
 <script>
-  const buttons = document.querySelectorAll('.filters button');
-  const cards = document.querySelectorAll('.insight-card');
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');
+  const cards = document.querySelectorAll<HTMLElement>('.insight-card');
 
-  const map = {
+  const map: Record<string, string> = {
     Research: 'Research',
     Benchmarks: 'Benchmark',
     'Use Cases': 'Use Case',
@@ -141,50 +141,39 @@ const insights = [
   }
 
   .insight-placeholder {
-    position: relative;
     height: 150px;
+    position: relative;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
-    padding: 18px 20px;
+    padding: 16px;
     background:
-      radial-gradient(circle at 72% 36%, rgba(22, 135, 255, .55), transparent 28%),
-      linear-gradient(135deg, #06182b, #0d426d);
+      radial-gradient(circle at 80% 35%, rgba(22,135,255,.42), transparent 30%),
+      linear-gradient(135deg, #06182b, #0b3153);
   }
 
-  .insight-placeholder::before,
   .insight-placeholder::after {
     content: '';
     position: absolute;
-    width: 220px;
-    height: 74px;
-    right: -35px;
-    border: 1px solid rgba(83, 177, 255, .34);
+    width: 230px;
+    height: 75px;
+    right: -28px;
+    top: 28px;
+    border: 1px solid rgba(73,174,255,.42);
     border-radius: 50%;
     transform: rotate(-12deg);
-  }
-
-  .insight-placeholder::before {
-    top: 28px;
-  }
-
-  .insight-placeholder::after {
-    top: 56px;
   }
 
   .insight-placeholder span {
     position: relative;
     z-index: 2;
-    color: rgba(255, 255, 255, .72);
+    color: rgba(255,255,255,.78);
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: .18em;
-    text-transform: uppercase;
+    letter-spacing: .16em;
   }
 
-  .insight-content {
-    padding: 24px;
-  }
+  .insight-content { padding: 24px; }
 
   .content-type {
     color: #0878f9;
@@ -221,14 +210,10 @@ const insights = [
   }
 
   @media (max-width: 900px) {
-    .insight-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .insight-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 600px) {
-    .insight-grid {
-      grid-template-columns: 1fr;
-    }
+    .insight-grid { grid-template-columns: 1fr; }
   }
 </style>
