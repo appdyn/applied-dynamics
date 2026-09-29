@@ -2,7 +2,7 @@
 const { title, text, icon, image, href, showLearn = true } = Astro.props;
 ---
 
-<article class:list={["card", { "image-card": image }]}>
+<article class:list={["card", { "image-card": image }]} data-image={image}>
   <div class="card-body">
     {icon && <img class="icon" src={`/images/icon-${icon}.svg`} alt="" />}
 
@@ -29,7 +29,10 @@ const { title, text, icon, image, href, showLearn = true } = Astro.props;
     image && (
       <div class="card-image-wrap">
         <img
-          class="card-image"
+          class:list={[
+            "card-image",
+            { "card-image--state-local": image === "state-local" },
+          ]}
           src={`/images/${image}-sharp.webp`}
           alt=""
           loading="lazy"
@@ -42,9 +45,7 @@ const { title, text, icon, image, href, showLearn = true } = Astro.props;
 <style>
   .card-image-wrap {
     width: 100%;
-    aspect-ratio: 16 / 7;
     overflow: hidden;
-    background: #eef3f8;
   }
 
   .card-image {
@@ -53,5 +54,11 @@ const { title, text, icon, image, href, showLearn = true } = Astro.props;
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  .card-image--state-local {
+    transform: translateY(-14px) scale(1.06);
+    transform-origin: center center;
+    object-position: center 70%;
   }
 </style>

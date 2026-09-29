@@ -3,4 +3,31 @@ import AppliedLayout from "../layouts/AppliedLayout.astro";
 import ApprovedHero from "../components/ApprovedHero.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 ---
-<AppliedLayout title="/industries" page="industries"><ApprovedHero page="industries" title="Industries We Serve" description="Deep technical expertise across government and commercial sectors, with a focus on mission-critical organizations and growing businesses." width={308} height={115}/><section class="content grid two industries"><ServiceCard title="U.S. Military & Defense" text="Secure, resilient solutions to support mission readiness and national security." image="military" /><ServiceCard title="Federal Government" text="Modernize operations and enhance security for federal agencies." image="federal" /><ServiceCard title="State & Local Government" text="Practical solutions to improve service delivery and security." image="state-local" /><ServiceCard title="Commercial & Growing Businesses" text="AI, cybersecurity, and cloud solutions designed for small and mid-size businesses and commercial organizations." image="commercial" /></section></AppliedLayout>
+
+<AppliedLayout title="/industries" page="industries"
+  ><ApprovedHero
+    page="industries"
+    title="Industries We Serve"
+    description="Deep technical expertise across government and commercial sectors, with a focus on mission-critical organizations and growing businesses."
+    width={308}
+    height={115}
+  /><section class="content grid two industries">
+    <ServiceCard
+      title="U.S. Military & Defense"
+      text="Secure, resilient solutions to support mission readiness and national security."
+      image="military"
+    /><ServiceCard
+      title="Federal Government"
+      text="Modernize operations and enhance security for federal agencies."
+      image="federal"
+    /><ServiceCard
+      title="State & Local Government"
+      text="Practical solutions to improve service delivery and security."
+      image="state-local"
+    /><ServiceCard
+      title="Commercial & Growing Businesses"
+      text="AI, cybersecurity, and cloud solutions designed for small and mid-size businesses and commercial organizations."
+      image="commercial"
+    />
+  </section></AppliedLayout
+>
