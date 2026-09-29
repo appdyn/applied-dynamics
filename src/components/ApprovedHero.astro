@@ -1,0 +1,8 @@
+---
+const { page, title, description, width, height } = Astro.props;
+---
+<section class:list={['approved-hero', { 'home-hero': page === 'home' }]} aria-labelledby="page-title">
+<h1 id="page-title" class="sr-only">{title}</h1><p class="sr-only">{description}</p>
+<picture><source media="(max-width: 700px)" srcset={`/images/${page}-hero-mobile.webp`}/><img src={`/images/${page}-hero-desktop.webp`} width={width} height={height} alt="" fetchpriority="high" loading="eager"/></picture>
+{page === 'home' && <><a class="hotspot home-solutions" href="/solutions" aria-label="Explore Our Solutions"></a><a class="hotspot home-contact" href="/contact" aria-label="Talk With Our Team"></a><ul class="sr-only"><li>Protect: Cybersecurity for today and tomorrow</li><li>Solve: Turn AI potential into real outcomes</li><li>Build: Implement practical and secure solutions</li><li>Scale: Grow with confidence and resilience</li></ul></>}
+</section>

@@ -1,0 +1,4 @@
+---
+const { title, text, icon, image, href, showLearn = true } = Astro.props;
+---
+<article class:list={['card', { 'image-card': image }]}><div class="card-body">{icon && <img class="icon" src={`/images/icon-${icon}.webp`} alt=""/>}<div><h2>{title}</h2><p>{text}</p>{showLearn && (href ? <a class="learn" href={href}>Learn More <span aria-hidden="true">→</span></a> : <button class="learn unavailable" type="button" disabled>Learn More <span aria-hidden="true">→</span></button>)}</div></div>{image && <img class="card-image" src={`/images/${image}.webp`} alt="" loading="lazy"/>}</article>
